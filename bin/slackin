@@ -1,7 +1,13 @@
 #!/usr/bin/env node
 
+var mkdirp = require('mkdirp')
 var pkg = require('./../package')
 var args = require('args')
+
+mkdirp('./../dist', function (err) {
+    if (err) console.error(err)
+});
+
 var slackin = require('./../dist').default
 
 args
